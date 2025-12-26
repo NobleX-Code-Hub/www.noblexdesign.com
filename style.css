@@ -57,8 +57,9 @@ html {
 .loader_container {
 	inset: 0;
 	position: fixed;
-	display: grid;
-	place-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--header-color);
 	z-index: 999999999999999999999;
 }
@@ -1352,6 +1353,7 @@ html {
 	justify-content: space-between;
 	gap: 15px;
 	list-style: none;
+	cursor: pointer;
 	font-size: 2rem;
 	margin-bottom: 50px;
 }
@@ -4102,6 +4104,7 @@ html {
 	}
 	.what__we__do__boxes {
 		width: 270px;
+		color: red;
 		height: 300px;
 		gap: 10px;
 		padding: 20px 25px 20px 25px;
@@ -4118,6 +4121,10 @@ html {
 	}
 	.go__up__arrow .goUp__image {
 		width: 15px;
+	}
+	.loader {
+		width: 130px;
+		height: 130px;
 	}
 	.more__icon {
 		width: 40px;
@@ -4158,7 +4165,7 @@ html {
 		height: 50%;
 	}
 	.NobleX__animate h2 {
-		font-size: 2rem;
+		font-size: 1.7rem;
 	}
 	.logo__main {
 		width: 40px;
@@ -4259,9 +4266,10 @@ html {
 	.transform_online h1 {
 		font-size: 1.5rem;
 	}
-	/* .top__top__new h1 {
-		font-size: 0.6rem;
-	} */
+	.top__top__new h1 {
+		font-size: 0.68rem;
+		text-align: center;
+	}
 	.transform_online p {
 		font-size: 1rem;
 	}
