@@ -10,7 +10,7 @@ const exit__icon = document.querySelector('.exit__icon');
 const lastImage = document.querySelector('.aboutMe__Middle img:last-child');
 const firstImage = document.querySelector('.aboutMe__Middle img:first-child');
 const loader_container = document.querySelector('.loader_container');
-const homepage__section = document.querySelector('.homepage__section');
+const coverFathers = document.querySelector('.coverFathers');
 const bodyElement = document.querySelector('.body');
 const hiddenElements = document.querySelectorAll('.works__container');
 const header__portfolio = document.querySelector('.header__portfolio');
@@ -302,7 +302,7 @@ window.addEventListener('load', () => {
 	more__icon.classList.remove('reduce');
 	loader_container.classList.add('remove');
 	body.classList.add('scroll');
-	homepage__section.classList.add('show');
+	coverFathers.classList.add('show');
 
 	setTimeout(() => {
 		top__top__new.classList.add('show');
