@@ -9,91 +9,123 @@
 			rel="shortcut icon"
 			href="images/nobleX-logo-twitter-like.png"
 			type="image/x-icon" />
-		<link rel="stylesheet" href="style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 			rel="stylesheet" />
+		<!-- Remix Icon -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+			rel="stylesheet" />
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="consult.css" />
 	</head>
 	<body>
-		<img
-			class="cover"
-			src="images/c9af431cdb9322e4ff4a43af70db96ae.jpg"
-			alt="c9af431cdb9322e4ff4a43af70db96ae.jpg" />
-		<div class="loader_container">
-			<div class="loader"></div>
-			<img
-				class="loader-letter"
-				src="images/nobleX-logo-hostinger.png"
-				alt="nobleX-logo-hostinger" />
-		</div>
-		<section class="consultation">
-			<h1>Start Your Project Consultation</h1>
-			<p>Tell me about your idea and i'll get back to you fast</p>
-			<div class="service-toggle">
-				<button class="active" onclick="selectService('Website Design')">
-					Website Design
+		<header class="top-bar">
+			<h2 class="logo">NobleX</h2>
+			<button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+				<i class="ri-sun-line"></i>
+			</button>
+		</header>
+
+		<main class="container">
+			<h1>Project Consultation</h1>
+			<p class="subtitle">
+				Select a service, describe your project, and optionally upload reference
+				files (visual only).
+			</p>
+
+			<!-- SERVICE TABS -->
+			<div class="tabs">
+				<button class="tab active" data-service="Web Design">Web Design</button>
+				<button class="tab" data-service="Graphic Design">
+					Graphic Design
 				</button>
-				<button onclick="selectService('Graphics Design')">
-					Graphics Design
-				</button>
+				<button class="tab" data-service="Logo Design">Logo Design</button>
+				<button class="tab" data-service="Branding">Branding</button>
 			</div>
 
-			<form action="https://api.web3forms.com/submit" method="POST">
+			<!-- CONSULTATION FORM -->
+			<form
+				id="consultForm"
+				class="form"
+				action="https://api.web3forms.com/submit"
+				method="POST">
 				<input
 					type="hidden"
 					name="access_key"
 					value="e40b5ff4-9839-492b-9ae6-8c8ffa81e294" />
 				<input
 					type="hidden"
-					name="Service Type"
-					id="serviceType"
-					value="Website Design" />
+					name="subject"
+					value="New NobleX Consultation Request" />
+				<input
+					type="hidden"
+					name="service"
+					id="selectedService"
+					value="Web Design" />
+
+				<!-- USER DETAILS -->
 				<div class="grid">
 					<input
 						type="text"
-						name="First Name"
+						name="first_name"
 						placeholder="First Name"
 						required />
+					<input type="text" name="middle_name" placeholder="Middle Name" />
 					<input
 						type="text"
-						name="Second Name"
-						placeholder="Second Name"
-						required />
-					<input
-						type="text"
-						name="Last Name"
+						name="last_name"
 						placeholder="Last Name"
 						required />
+					<input type="tel" name="phone" placeholder="Phone Number" required />
 					<input
 						type="text"
-						name="Address"
-						placeholder="Resident Address"
-						required />
+						name="business_name"
+						placeholder="Business / Brand Name" />
 				</div>
 
-				<div class="grid">
-					<input
-						type="email"
-						name="Email"
-						placeholder="Email Address"
-						required />
-					<input
-						type="tel"
-						name="Phone Number"
-						placeholder="Phone Number"
-						required />
+				<div class="service-note" id="serviceNote">
+					Describe the website layout, pages, and features you want.
 				</div>
 
 				<textarea
-					name="Project Description"
+					name="project_description"
 					placeholder="Describe your project in detail..."
 					required></textarea>
 
-				<button type="submit">Send Consultation</button>
+				<!-- MODERN FAKE FILE UPLOAD -->
+				<label class="upload-box">
+					<input type="file" multiple accept="image/*,application/pdf" />
+					<div class="upload-inner">
+						<i class="ri-upload-cloud-2-line"></i>
+						<div>
+							<strong>Upload reference files</strong>
+							<p>PNG, JPG, PDF — optional (visual only)</p>
+						</div>
+					</div>
+					<div class="progress-bar"><div class="progress"></div></div>
+					<div class="thumbnails"></div>
+				</label>
+
+				<button type="submit" class="submit-btn">
+					Send Consultation Request
+				</button>
 			</form>
-		</section>
+		</main>
+
+		<!-- FLOATING WHATSAPP BUTTON -->
+		<div id="whatsappButton">
+			<a href="https://wa.me/2348162697593" target="_blank">
+				<img
+					src="https://cdn-icons-png.flaticon.com/512/124/124034.png"
+					alt="WhatsApp" />
+			</a>
+		</div>
+
+		<!-- JS -->
 		<script src="consult.js"></script>
 	</body>
 </html>
