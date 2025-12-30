@@ -20,15 +20,6 @@ tabs.forEach((tab) => {
 	});
 });
 
-// THEME TOGGLE
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-	document.body.classList.toggle('light');
-	themeToggle.innerHTML = document.body.classList.contains('light')
-		? '<i class="ri-moon-line"></i>'
-		: '<i class="ri-sun-line"></i>';
-});
-
 // MODERN FAKE FILE UPLOAD (VISUAL ONLY)
 const uploadInput = document.querySelector('.upload-box input');
 const thumbnails = document.querySelector('.thumbnails');
